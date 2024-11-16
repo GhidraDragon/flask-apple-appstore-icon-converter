@@ -38,11 +38,11 @@ def upload_image():
             return redirect(url_for('download_image', filename='converted_image.png'))
     return '''
     <!doctype html>
-    <title>Upload Image</title>
-    <h1>Upload an image to convert</h1>
+    <title>Apple AppStore Icon Converter</title>
+    <h1>Automatically changes any picture into 1024x1024 which XCode supports... just hit Convert</h1>
     <form method=post enctype=multipart/form-data>
       <input type=file name=file>
-      <input type=submit value=Upload>
+      <input type=submit value=Convert>
     </form>
     '''
 
