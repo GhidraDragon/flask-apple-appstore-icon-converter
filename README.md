@@ -1,4 +1,4 @@
-Converts any image to 1024x1024 which XCode requires for iOS Apps
+Converts any image to 1024x1024 which XCode requires for iOS Apps; just select file then hit upload (which means convert)
 
 ![Image 11-16-24 at 1 44 PM](https://github.com/user-attachments/assets/357d5408-8d69-4c40-9cf3-6ead9cecf885)
 
