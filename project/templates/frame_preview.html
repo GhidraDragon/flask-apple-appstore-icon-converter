@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Framed Screenshot Preview</title></head>
+<body>
+<h1>Device Frame Preview</h1>
+<img src="{{ url_for('static', filename='..' ~ '/output/' ~ frame_filename) }}" alt="Framed Preview" style="max-width: 100%;">
+<p><a href="{{ url_for('index') }}">Back Home</a></p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview Converted Image</title>
+</head>
+<body>
+    <h1>Preview Your Converted Image</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <img src="{{ url_for('static', filename='..' ~ '/output/' ~ filename) }}" alt="Converted Image" style="width:512px;height:512px;">
+    <p><a href="{{ url_for('download_image', filename=filename) }}">Download Your 1024x1024 PNG</a></p>
+    <p><a href="{{ url_for('upload_image') }}">Convert Another Image</a> | <a href="{{ url_for('index') }}">Home</a></p>
+</body>
+</html>

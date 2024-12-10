@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Apply Filters</title></head>
+<body>
+<h1>Apply Filters to Your Image</h1>
+<form method="post" enctype="multipart/form-data">
+    <p>Select an image:</p>
+    <input type="file" name="file" accept="image/*"><br><br>
+    <p>Select a filter:</p>
+    <select name="filter_type">
+        <option value="grayscale">Grayscale</option>
+        <option value="blur">Blur</option>
+    </select><br><br>
+    <input type="submit" value="Apply Filter">
+</form>
+</body>
+</html>

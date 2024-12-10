@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Typography Preview</title></head>
+<body>
+<h1>Typography Preview</h1>
+{% if preview_filename %}
+  <img src="{{ url_for('static', filename='..' ~ '/output/' ~ preview_filename) }}" alt="Typography Preview">
+{% else %}
+  <form method="post">
+    <p>Enter your text:</p>
+    <input type="text" name="text" value="Hello, iOS!"><br><br>
+    <p>Font size:</p>
+    <input type="number" name="font_size" value="72"><br><br>
+    <input type="submit" value="Generate Preview">
+  </form>
+{% endif %}
+<p><a href="{{ url_for('index') }}">Back Home</a></p>
+</body>
+</html>

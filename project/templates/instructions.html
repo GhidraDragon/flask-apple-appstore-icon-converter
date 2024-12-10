@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructions</title>
+</head>
+<body>
+    <h1>Instructions and Information</h1>
+    <p>
+        This service allows you to upload any image and receive a 1024x1024 PNG, 
+        which is the recommended size for Xcode app icons. Simply go to the 
+        <a href="{{ url_for('upload_image') }}">conversion page</a>, select your file, and click "Convert."
+    </p>
+    <p>
+        Once the conversion is complete, you can preview the result and download it 
+        directly. This PNG image will be perfectly sized and formatted for use in your 
+        Xcode project without requiring any additional manual resizing or formatting.
+    </p>
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>

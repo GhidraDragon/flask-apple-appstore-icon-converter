@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xcode-Compatible App Icon Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px; 
+            background: #f9f9f9;
+        }
+        h1 {
+            text-align: center; 
+            margin-bottom: 40px;
+        }
+        nav {
+            text-align: center; 
+            margin-bottom: 40px;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none; 
+            color: #333; 
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h2 {
+            border-bottom: 1px solid #ccc; 
+            padding-bottom: 10px;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #333; 
+            color: #fff; 
+            padding: 10px 15px; 
+            text-decoration: none; 
+            border: none; 
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #555;
+        }
+        .note {
+            font-size: 0.9em; 
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Xcode-Compatible App Icon Converter</h1>
+
+    <nav>
+        <a href="{{ url_for('upload_image') }}">Convert an Image</a> |
+        <a href="{{ url_for('instructions') }}">Instructions</a> |
+        <a href="{{ url_for('serve_pdfsage') }}">View PDFSage.png</a> |
+        <a href="{{ url_for('filters') }}">Apply Filters</a>
+    </nav>
+
+    <section>
+        <h2>About This Tool</h2>
+        <p>This tool leverages server-side logic (as defined in <code>app.py</code>) to handle image conversions, icon generation, filtering, and more. You can:</p>
+        <ul>
+            <li>Convert images to a 1024x1024 PNG suitable for use as an Xcode app icon.</li>
+            <li>Generate a full set of iOS app icons from a single image upload.</li>
+            <li>Apply various filters (like grayscale or blur) to your images.</li>
+            <li>Create homescreen mockups and launch screen images.</li>
+            <li>Convert color profiles and generate typography previews.</li>
+        </ul>
+        <p>All actions are performed by the server-side code. Simply select the desired operation, upload your image (if required), and let the backend do the rest.</p>
+    </section>
+
+    <section>
+        <h2>Quick Start</h2>
+        <p>To begin, you can directly upload an image to convert it to a 1024x1024 PNG:</p>
+        <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br>
+            <button class="btn" type="submit">Convert to 1024x1024 PNG</button>
+        </form>
+        <p class="note">After uploading, you will be able to preview and download your converted image.</p>
+    </section>
+
+    <section>
+        <h2>Additional Features</h2>
+        <p>Try out other features by following the links in the navigation bar:</p>
+        <ul>
+            <li><strong>Instructions:</strong> Detailed steps on how to use each feature.</li>
+            <li><strong>View PDFSage.png:</strong> Check out an example static resource served by the backend.</li>
+            <li><strong>Apply Filters:</strong> Upload an image and apply a grayscale or blur filter.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Icon Set Generation</h2>
+        <p>You can also generate a full iOS app icon set from a single uploaded image. These icons will be automatically packaged into a downloadable ZIP file.</p>
+        <form action="{{ url_for('generate_icon_set') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br>
+            <button class="btn" type="submit">Generate iOS App Icons</button>
+        </form>
+        <p class="note">Once generated, you'll be able to download the complete icon set bundle.</p>
+    </section>
+
+    <section>
+        <h2>Explore More</h2>
+        <p>All backend code that powers these operations resides in <code>app.py</code>, which you are already using through these web forms and links. Simply choose what you want to do, and the underlying Flask application (defined in <code>app.py</code>) will process your request.</p>
+    </section>
+
+</body>
+</html>
