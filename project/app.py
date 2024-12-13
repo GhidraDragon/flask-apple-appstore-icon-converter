@@ -390,5 +390,5 @@ def typography_preview():
 
 if __name__ == '__main__':
     # In production, use Gunicorn or another WSGI server:
-    # gunicorn -w 4 -b 0.0.0.0:529 app:app
-    app.run(host='0.0.0.0', port=599, debug=False)
+    # gunicorn -w 4 -b 0.0.0.0:699 app:app
+    app.run(host='0.0.0.0', port=699, debug=False)
